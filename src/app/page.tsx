@@ -4,6 +4,7 @@ import { createPassportClient } from "@0xpass/passport-viem";
 import { http } from "viem";
 import { mainnet } from "viem/chains";
 import { usePassport } from "./hooks/usePassport";
+import Benchmark from "benchmark";
 
 export default function Page() {
   const [username, setUsername] = useState("");
@@ -91,6 +92,30 @@ export default function Page() {
     }
   }
 
+  async function signBenchmark() {
+    const suite = new Benchmark.Suite();
+    const client = await createWalletClient();
+    const [address] = await client.getAddresses();
+    suite
+      .add("Sign test", {
+        defer: true,
+        fn: async (deferred: any) => {
+          await client.signMessage({
+            account: address,
+            message: "Hello World",
+          });
+          deferred.resolve();
+        },
+      })
+      .on("cycle", (event: Benchmark.Event) => {
+        console.log(String(event.target));
+      })
+      .on("complete", function (this: Benchmark.Suite) {
+        console.log("Fastest is " + this.filter("fastest").map("name"));
+      })
+      .run({ async: true });
+  }
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-white text-black">
       <div
@@ -137,6 +162,13 @@ export default function Page() {
                 className="border border-1 rounded p-2 border-black mb-4 ml-2"
               >
                 {signMessageLoading ? "Signing..." : "Sign Message"}
+              </button>
+              <button
+                onClick={async () => await signBenchmark()}
+                disabled={signMessageLoading}
+                className="border border-1 rounded p-2 border-black mb-4 ml-2"
+              >
+                {signMessageLoading ? "Signing..." : "Sign benchmark"}
               </button>
             </>
           ) : (
