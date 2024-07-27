@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@0xpass/passport':
-        specifier: 2.1.5
-        version: 2.1.5
+        specifier: 2.1.7
+        version: 2.1.7
       '@0xpass/passport-viem':
         specifier: 2.0.1
         version: 2.0.1(typescript@5.3.3)
       '@0xpass/webauthn-signer':
-        specifier: 2.0.0
-        version: 2.0.0
+        specifier: 2.0.1
+        version: 2.0.1
       '@types/benchmark':
         specifier: ^2.1.5
         version: 2.1.5
@@ -60,17 +60,17 @@ importers:
 
 packages:
 
-  '@0xpass/models@2.0.0':
-    resolution: {integrity: sha512-VwKhhNnCbOvoE3j0NoPNVtrxxM/6J09M2qHvavV3pAz5ClZ0JilydIkjuSXLcDtnBmoubofy/laxD9/OEB5Ugg==}
+  '@0xpass/models@2.0.1':
+    resolution: {integrity: sha512-FSczR+ApgJU0JZRdEmmTbxX5p19FVOiOItgnZ+SPD6WS3AbRUQRBw64x2EmH0GFAnKr6oxMccDWsY91Q7SSo+A==}
 
   '@0xpass/passport-viem@2.0.1':
     resolution: {integrity: sha512-zYtV90otySU9vuW6HMx1I75w45eym6WTcB/MuSEXqNUPwUQtiJz9u437TkAAOvgJ9bIGWZU0G+7WGadVnhHGLQ==}
 
-  '@0xpass/passport@2.1.5':
-    resolution: {integrity: sha512-jA0QphlYugJLMcRDL+4dZ2DZHrLYc9PWkEKqqXL384yiK++ww2TmPKsSYSCb1GJeI2n9oIviKXTiLC935qUR0w==}
+  '@0xpass/passport@2.1.7':
+    resolution: {integrity: sha512-BaG7MLOjGHRnciyCgOe3aY0dYMBDysrhasrh3k3SWThwYJy9CFCvDaELVSampifSGa8NStIMECW64WMCpforrA==}
 
-  '@0xpass/webauthn-signer@2.0.0':
-    resolution: {integrity: sha512-4yZvURGxlMBnbfEGPg7jjIFIxwpS6mNaBtDaVtH2YdYVKM6glkprCFdn8kdDEADo3dIJfzG0sL51cARzzrI50w==}
+  '@0xpass/webauthn-signer@2.0.1':
+    resolution: {integrity: sha512-zIxFnKwPwiN4V7LrU/9Up8s83/6P1xSD9zMisMOyBmA+dBmsUVSWiJiv3LOCm7w6PFTqQaC557VV04VyF80NSQ==}
 
   '@adraffy/ens-normalize@1.10.0':
     resolution: {integrity: sha512-nA9XHtlAkYfJxY7bce8DcN7eKxWWCWkU+1GR9d+U6MbNpfwQp8TI7vqOsBsMcHoT4mBu2kypKoSKnghEzOOq5Q==}
@@ -834,7 +834,7 @@ packages:
 
 snapshots:
 
-  '@0xpass/models@2.0.0': {}
+  '@0xpass/models@2.0.1': {}
 
   '@0xpass/passport-viem@2.0.1(typescript@5.3.3)':
     dependencies:
@@ -848,9 +848,9 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@0xpass/passport@2.1.5':
+  '@0xpass/passport@2.1.7':
     dependencies:
-      '@0xpass/models': 2.0.0
+      '@0xpass/models': 2.0.1
       axios: 1.6.8
       elliptic: 6.5.4
       js-sha3: 0.9.3
@@ -858,9 +858,9 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@0xpass/webauthn-signer@2.0.0':
+  '@0xpass/webauthn-signer@2.0.1':
     dependencies:
-      '@0xpass/models': 2.0.0
+      '@0xpass/models': 2.0.1
       '@github/webauthn-json': 2.1.1
       buffer: 6.0.3
 
