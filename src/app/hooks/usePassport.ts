@@ -9,7 +9,7 @@ export function usePassport(scopeId: string) {
   if (!signerRef.current) {
     signerRef.current = new WebauthnSigner({
       rpId: process.env.NEXT_PUBLIC_RP_ID!,
-      rpName: "0xPass",
+      rpName: "localhost",
     });
   }
 
@@ -17,7 +17,7 @@ export function usePassport(scopeId: string) {
     passportRef.current = new Passport({
       scopeId: scopeId,
       signer: signerRef.current,
-      network: Network.TESTNET,
+      network: Network.MAINNET,
     });
   }
 

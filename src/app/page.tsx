@@ -5,6 +5,7 @@ import { http } from "viem";
 import { mainnet } from "viem/chains";
 import { usePassport } from "./hooks/usePassport";
 import Benchmark from "benchmark";
+import { Network } from "@0xpass/passport";
 
 export default function Page() {
   const [username, setUsername] = useState("");
@@ -26,7 +27,7 @@ export default function Page() {
     userDisplayName: username,
   };
 
-  const { passport } = usePassport("07907e39-63c6-4b0b-bca8-377d26445172");
+  const { passport } = usePassport("c24757d8-afdc-4c16-a02c-c0c1835e40ac");
 
   async function register() {
     setRegistering(true);
@@ -71,7 +72,8 @@ export default function Page() {
     return await createPassportClient(
       authenticatedHeader,
       fallbackProvider,
-      mainnet
+      mainnet,
+      Network.MAINNET
     );
   }
 
